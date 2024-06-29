@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Bootstrap CSS Start -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Bootstrap CSS End -->
+
+  <!-- Icon Pack Start -->
+  <script src="https://kit.fontawesome.com/94b68a0c09.js" crossorigin="anonymous"></script>
+  <!-- Icon Pack End -->
+
+  <!-- Meta Start -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prabesh Paudel</title>
+  <link rel="shortcut icon" type="image/x-icon" href="fphoe/prabeshpic2-modified.png">
+  <!-- Meta End -->
+
+  <!-- Custom CSS for alignment and background -->
+  <style>
+    body {
+      background-color: #edd9b7; /* Light brown background */
+      font-family: 'Segoe UI', sans-serif;
+      color: #3e1f00; /* Dark brown text color */
+    }
+
+    .main-content {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-top: 50px; /* Added padding to avoid cutting off the top of the image */
+    }
+
+    .profile-img {
+      border: 8px solid #fff; /* White border */
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+      margin-top: 20px; /* Added margin to ensure it's not too close to the top */
+    }
+
+    .profile-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #3e1f00; /* Dark brown text color */
+    }
+
+    .profile-description {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #5c3a27; /* Light brown text color */
+    }
+
+    .social-buttons .btn {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px; /* Adjust height to fit icons better */
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+
+    .social-buttons .btn i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-buttons .btn span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .social-buttons .btn:hover i {
+      transform: scale(1.2);
+    }
+
+    .social-buttons .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.5s;
+    }
+
+    .social-buttons .btn:hover::before {
+      left: 100%;
+    }
+
+    .section {
+      padding: 50px 0;
+      border-bottom: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #3e1f00; /* Dark brown text color */
+    }
+
+.footer {
+      padding: 20px 0;
+      text-align: center;
+      background-color: #3e1f00;
+      color: #fff;
+    }
+
+
+    .spotify-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .trailer-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .trailer-section iframe {
+      flex: 1 1 calc(33% - 40px);
+      min-width: 300px;
+      max-width: 32%;
+      border: 2px solid #ccc; /* Add border to each iframe */
+    }
+
+    .bar-graph {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .bar {
+      width: 100%;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 30px;
+      background-color: #3e1f00; /* Dark brown bar color */
+      border-radius: 5px 0 0 5px;
+      width: 0;
+      line-height: 30px;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .bar-label {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-height: 500px;
+      overflow-y: auto;
+      position: relative;
+      text-align: center; /* Center the text */
+      margin-left: auto; /* Center the box */
+      margin-right: auto; /* Center the box */
+    }
+
+    .dropdown-btn {
+      display: block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      color: #fff;
+      background-color: #3e1f00;
+      border: 2px solid #3e1f00;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dropdown-btn:hover {
+      background-color: #fff;
+      color: #3e1f00;
+    }
+
+    .section .dropdown-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hide-btn {
+      display: block;
+      font-size: 0.8rem;
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+
+
+  .feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff7e6; /* Light background color */
+    border: 2px solid #3e1f00; /* Dark brown border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  .feedback-form .form-label {
+    font-weight: bold;
+    color: #3e1f00; /* Dark brown text color */
+  }
+
+ .feedback-form {
+    background-color: #fff; /* Consistent background color */
+    border: 2px solid #3e1f00; /* Dark brown border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the form */
+  }
+
+  .section {
+    padding: 50px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+/* CSS for confirmation message box */
+#confirmationMessage {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    text-align: center; /* Center-align the text */
+}
+
+/* Hover effect */
+#confirmationMessage:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <div class="text-center">
+      <img src="fphoe/prabeshpic2.jpg" alt="Prabesh Paudel" class="profile-img mb-3" style="width: 200px;">
+      <p class="profile-heading">Prabesh Paudel</p>
+      <p class="fs-6">@prabeshpaudell</p>
+      <p class="profile-description">I'm interested in frontend, backend, AI, Security and Networking.</p>
+    </div>
+
+    <div class="container text-center social-buttons">
+      <a href="https://github.com/virtualprabesh" target="_blank" class="text-decoration-none">
+        <button class="btn btn-outline-dark btn-lg w-100"><i class="fab fa-github"></i><span>virtualprabesh</span></button>
+      </a>
+      <a href="https://www.linkedin.com/in/prabesh-paudel-42b690252/" target="_blank" class="text-decoration-none">
+        <button class="btn btn-outline-dark btn-lg w-100"><i class="fab fa-linkedin-in"></i><span>Prabesh-Paudel</span></button>
+      </a>
+      <a href="https://www.instagram.com/prabesh.paudell" target="_blank" class="text-decoration-none">
+        <button class="btn btn-outline-dark btn-lg w-100"><i class="fab fa-instagram"></i><span>prabesh.paudell</span></button>
+      </a>
+
+      <a href="https://prabhuai.vercel.app/" target="_blank" class="text-decoration-none">
+        <button id="chatWithPrabhuAI" class="btn btn-outline-dark btn-lg w-100"><i class="fas fa-robot"></i><span>Chat with PrabhuAI</span></button>
+      </a>
+
+      </a>
+    </div>
+  </div>
+
+<!-- Content Sections Start -->
+    <section class="section" id="about-me">
+      <div class="container">
+        <h2 class="section-heading">About Me</h2>
+        <p>Passionate about learning and exploring new technologies and always eager to take on new challenges.</p>
+      </div>
+    </section>
+
+
+  <!-- Interest Bar Graph Section -->
+  <div class="section" id="interest-bar-graph">
+    <div class="container">
+      <p class="section-heading">My Interests</p>
+      <div class="bar-graph">
+        <div class="bar">
+          <div class="bar-fill" style="width: 33%;" data-percentage="33">Frontend - 33%</div>
+          <div class="dropdown-container">
+            <div class="dropdown-content">
+              I like frontend development only a little, mostly into backend.
+              <span class="hide-btn">Hide</span>
+            </div>
+            <button class="dropdown-btn">Know More</button>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar-fill" style="width: 89%;" data-percentage="89">Backend - 89%</div>
+          <div class="dropdown-container">
+            <div class="dropdown-content">
+              I'm into backend development, focusing on server-side logic and databases
+              <span class="hide-btn">Hide</span>
+            </div>
+            <button class="dropdown-btn">Know More</button>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar-fill" style="width: 72%;" data-percentage="72">AI - 72%</div>
+          <div class="dropdown-container">
+            <div class="dropdown-content">
+              I love AI and have a strong interest in learning and developing it
+              <span class="hide-btn">Hide</span>
+            </div>
+            <button class="dropdown-btn">Know More</button>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar-fill" style="width: 95%;" data-percentage="95">Cyber Security and Networking - 95%</div>
+          <div class="dropdown-container">
+            <div class="dropdown-content">
+              I love Cyber Security and Networking little too much.
+              <span class="hide-btn">Hide</span>
+            </div>
+            <button class="dropdown-btn">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Listen to Prabesh's Favorite Music Section -->
+  <div class="section" id="favorite-music">
+    <div class="container">
+      <p class="section-heading">Listen to Prabesh's Favorite Music Albums</p>
+      <div class="spotify-section">
+        <iframe src="https://open.spotify.com/embed/album/20r762YmB5HeofjMCiPMLv?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/album/2RIG29bd8zdq0TtHHTLZdV?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </div>
+  </div>
+
+<!-- Watch Prabesh's Favorite Webseries and Movies Section -->
+<div class="section" id="favorite-webseries-movies">
+  <div class="container">
+    <p class="section-heading">Watch Prabesh's Favorite Webseries and Movies</p>
+    <div class="trailer-section row">
+      <!-- First row of iframes -->
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="800" height="315" src="https://www.youtube.com/embed/HhesaQXLuRY" title="Breaking Bad Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Breaking Bad</p>
+      </div>
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/77PsqaWzwG0" title="Succession Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Succession</p>
+      </div>
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hZ5djcbM2fU" title="Better Call Saul Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Better Call Saul</p>
+      </div>
+      <!-- Second row of iframes -->
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/XZG1FzyB8DI" title="Into the Wild Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Into the Wild</p>
+      </div>
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/gsVoD0pTge0" title="Manchester by the Sea Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Manchester by the Sea</p>
+      </div>
+      <div class="col-md-4 mb-4 text-center">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6hB3S9bIaco" title="The Shawshank Redemption Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>The Shawshank Redemption</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <!-- Custom JS for bar graph animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const bars = document.querySelectorAll('.bar-fill');
+      bars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        bar.style.width = percentage + '%';
+      });
+
+      const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+      dropdownButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const content = button.previousElementSibling;
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'block';
+            button.style.display = 'none'; // Remove the button after click
+          }
+        });
+      });
+
+      const hideButtons = document.querySelectorAll('.hide-btn');
+      hideButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const content = button.parentElement;
+          content.style.display = 'none';
+          const dropdownBtn = content.nextElementSibling;
+          dropdownBtn.style.display = 'block'; // Show the "Know More" button again
+        });
+      });
+    });
+  </script>
+
+
+  <!-- Listen to Kanye's Unreleased Music Albums -->
+  <div class="container">
+    <p class="section-heading">Listen to Kanye's Unreleased Music Albums</p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+       <a href="https://untitled.stream/library/project/sKM9z4GMCdxXnFo2gFyS0" target="_blank">
+
+
+          <div class="album-cover" style="background-image: url('fphoe/yandi.jpg');">
+            <p class="album-name">Yandhi</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href=" https://untitled.stream/library/project/y-RCS5KHcAG1z96lUujeB" target="_blank">
+          <div class="album-cover" style="background-image: url('fphoe/goodjob.jpg');">
+            <p class="album-name">Good ass Job</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="https://untitled.stream/library/project/LFTph6AtUOHpcV2fbc-Er" target="_blank">
+          <div class="album-cover" style="background-image: url('fphoe/cruelwinter.jpg');">
+            <p class="album-name">Cruel Winter</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href=" https://untitled.stream/library/project/hvOcpXW76Lqw4eb7BlmdQ" target="_blank">
+          <div class="album-cover" style="background-image: url('fphoe/turbo16.webp');">
+            <p class="album-name">Turbo Grafx 16</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="https://untitled.stream/library/project/P2WZmk7NmWp6X-JLOK4OY" target="_blank">
+          <div class="album-cover" style="background-image: url('fphoe/donda.jpg');">
+            <p class="album-name">Donda: With Child</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="https://untitled.stream/library/project/PaA4wC1kTRMevsYn1bXdA" target="_blank">
+          <div class="album-cover" style="background-image: url('fphoe/vulture.png');">
+            <p class="album-name">Vultures 2</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .profile-img {
+    border: 8px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+  }
+
+  .album-cover {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: 8px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .album-cover:hover {
+    transform: scale(1.05);
+  }
+
+  .album-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .album-cover:hover::before {
+    opacity: 1;
+  }
+
+  .album-name {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 0 0 15px 15px;
+  }
+</style>
+
+<!-- Give Us Feedback Section -->
+<div class="section" id="give-us-feedback">
+  <div class="container text-center">
+    <p class="section-heading">Give Us Feedback</p>
+    <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/xzbnnzbl" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="_replyto" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="feedback" class="form-label">Feedback</label>
+        <textarea class="form-control" id="feedback" name="feedback" rows="3" placeholder="Your feedback" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    <div id="confirmationMessage" style="display:none; margin-top: 20px;">
+      <p>Your feedback has been sent to Prabesh Paudel.</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <p> --यति मात्र हो--  </p>
+  </div>
+
+
+<!-- Custom JS for form submission -->
+<script>
+  document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Display the confirmation message
+    document.getElementById('confirmationMessage').style.display = 'block';
+
+    // Optionally, clear the form fields
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('feedback').value = '';
+  });
+</script>
+
+
+  <!-- Bootstrap JS Start -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-qsrG9DE1PoJ51AKzE2O4qFuOrI1ZWb9nrz04P3ynF5cgV2ENKUVRk6UMV6UIF0UA" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pprn3073KE6tl6/tU3KE6pHu/1o8KNbMOoMR1I5vXAg1Wv9KfQ2c5o9ctPO3m9ct" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS End -->
+</body>
+</html>
